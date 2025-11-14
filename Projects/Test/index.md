@@ -2,3 +2,4 @@
 alt = "Test Model"
 auto-rotate camera-controls
 style="width: 600px; height: 400px;">
+</model-viewer>
