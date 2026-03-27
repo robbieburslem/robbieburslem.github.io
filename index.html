@@ -3,280 +3,277 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Robbie Burslem — Mechanical Engineer</title>
+  <title>Robbie Burslem — Mechanical Engineering Student</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #f5f3ef;
-      --ink: #1c1b18;
-      --muted: #7a7870;
-      --accent: #b84c1e;
-      --accent-light: #f0e6df;
-      --border: #dedad3;
-      --card: #fdfcfa;
+      --bg: #f7f6f3;
+      --ink: #181815;
+      --muted: #72706a;
+      --accent: #1a4a8a;
+      --accent-hover: #153d75;
+      --accent-light: #e8eef7;
+      --border: #dedad2;
+      --card: #ffffff;
       --serif: 'Playfair Display', Georgia, serif;
       --sans: 'IBM Plex Sans', system-ui, sans-serif;
       --mono: 'IBM Plex Mono', monospace;
     }
 
     html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--sans);
-      font-size: 16px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* NAV */
+    /* ── NAV ── */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.2rem 3rem;
-      background: rgba(245,243,239,0.92);
-      backdrop-filter: blur(14px);
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 3rem;
+      background: rgba(247,246,243,0.94);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
     }
 
-    .nav-logo { display: flex; flex-direction: column; text-decoration: none; }
-    .nav-logo-name { font-family: var(--serif); font-size: 1.05rem; color: var(--ink); line-height: 1.1; }
-    .nav-logo-title { font-size: 0.7rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+    .nav-logo { display: flex; flex-direction: column; text-decoration: none; gap: 1px; }
+    .nav-logo-name { font-family: var(--serif); font-size: 1rem; color: var(--ink); line-height: 1.1; font-weight: 700; }
+    .nav-logo-title { font-size: 0.65rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
 
-    .nav-links { display: flex; gap: 2.25rem; list-style: none; align-items: center; }
-    .nav-links a { font-size: 0.82rem; font-weight: 400; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { font-size: 0.8rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--ink); }
-    .nav-cta { color: var(--accent) !important; font-weight: 500 !important; }
 
-    /* HERO */
+    .nav-resume-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.45rem 1rem;
+      background: var(--accent); color: #fff;
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; text-decoration: none; border-radius: 1px;
+      transition: background 0.2s;
+    }
+    .nav-resume-btn:hover { background: var(--accent-hover); }
+
+    /* ── HERO ── */
     #hero {
       min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: grid; grid-template-columns: 1fr 1fr;
       align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 8rem 3rem 4rem;
-      gap: 4rem;
+      max-width: 1200px; margin: 0 auto;
+      padding: 8rem 3rem 4rem; gap: 5rem;
     }
 
     .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      color: var(--accent);
-      margin-bottom: 1.75rem;
-      opacity: 0;
-      animation: fadeUp 0.6s 0.1s forwards;
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-family: var(--mono); font-size: 0.72rem; color: var(--accent);
+      margin-bottom: 1.5rem;
+      opacity: 0; animation: fadeUp 0.6s 0.1s forwards;
     }
-
-    .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--accent); }
+    .hero-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
 
     .hero-name {
-      font-family: var(--serif);
-      font-size: clamp(3.2rem, 6vw, 5.2rem);
-      line-height: 1.0;
-      letter-spacing: -0.01em;
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 0.6s 0.22s forwards;
+      font-family: var(--serif); font-size: clamp(3rem, 5.5vw, 4.8rem);
+      line-height: 1.0; letter-spacing: -0.01em; margin-bottom: 1.25rem;
+      opacity: 0; animation: fadeUp 0.6s 0.22s forwards;
     }
-
     .hero-name em { font-style: italic; color: var(--accent); display: block; }
 
     .hero-bio {
-      font-size: 1rem;
-      font-weight: 300;
-      color: var(--muted);
-      max-width: 440px;
-      line-height: 1.85;
-      margin-bottom: 2.5rem;
-      opacity: 0;
-      animation: fadeUp 0.6s 0.36s forwards;
+      font-size: 1rem; font-weight: 300; color: var(--muted);
+      max-width: 460px; line-height: 1.85; margin-bottom: 2rem;
+      opacity: 0; animation: fadeUp 0.6s 0.34s forwards;
+    }
+    .hero-bio strong { color: var(--ink); font-weight: 500; }
+
+    .hero-tags {
+      display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.25rem;
+      opacity: 0; animation: fadeUp 0.6s 0.42s forwards;
+    }
+    .hero-tag {
+      font-family: var(--mono); font-size: 0.68rem; padding: 0.3rem 0.7rem;
+      background: var(--accent-light); color: var(--accent); border-radius: 1px;
+      letter-spacing: 0.05em;
     }
 
     .hero-actions {
-      display: flex;
-      gap: 0.875rem;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 0.6s 0.48s forwards;
+      display: flex; gap: 0.75rem; flex-wrap: wrap;
+      opacity: 0; animation: fadeUp 0.6s 0.5s forwards;
     }
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.7rem 1.5rem;
-      border-radius: 1px;
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-decoration: none;
-      cursor: pointer;
-      border: none;
-      font-family: var(--sans);
-      transition: all 0.2s;
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      padding: 0.7rem 1.4rem; border-radius: 1px;
+      font-size: 0.82rem; font-weight: 500; letter-spacing: 0.05em;
+      text-decoration: none; cursor: pointer; border: none;
+      font-family: var(--sans); transition: all 0.2s;
     }
-
-    .btn-primary { background: var(--ink); color: var(--bg); }
-    .btn-primary:hover { background: var(--accent); }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-hover); }
     .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--border); }
     .btn-ghost:hover { border-color: var(--ink); }
+    .btn-outline-accent { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+    .btn-outline-accent:hover { background: var(--accent); color: #fff; }
 
     /* Blueprint panel */
-    .hero-right { opacity: 0; animation: fadeIn 1s 0.6s forwards; }
-
+    .hero-right { opacity: 0; animation: fadeIn 1s 0.65s forwards; }
     .blueprint {
-      background: #1a2740;
-      border-radius: 2px;
-      padding: 2.5rem;
-      aspect-ratio: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
+      background: #0f1e36; border-radius: 2px; padding: 2.5rem;
+      aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
     }
-
     .blueprint::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(100,160,255,0.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(100,160,255,0.07) 1px, transparent 1px);
-      background-size: 32px 32px;
+      content: ''; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(100,160,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(100,160,255,0.06) 1px, transparent 1px);
+      background-size: 28px 28px;
     }
-
     .bp-svg { width: 80%; height: 80%; position: relative; z-index: 1; }
+    .bp-label { position: absolute; bottom: 1.1rem; left: 1.4rem; font-family: var(--mono); font-size: 0.6rem; color: rgba(100,160,255,0.4); letter-spacing: 0.1em; }
+    .bp-ref { position: absolute; top: 1.1rem; right: 1.4rem; font-family: var(--mono); font-size: 0.6rem; color: rgba(100,160,255,0.35); }
+    .bp-corner { position: absolute; width: 12px; height: 12px; border-color: rgba(100,160,255,0.3); border-style: solid; }
+    .bp-corner.tl { top: 10px; left: 10px; border-width: 1px 0 0 1px; }
+    .bp-corner.tr { top: 10px; right: 10px; border-width: 1px 1px 0 0; }
+    .bp-corner.bl { bottom: 10px; left: 10px; border-width: 0 0 1px 1px; }
+    .bp-corner.br { bottom: 10px; right: 10px; border-width: 0 1px 1px 0; }
 
-    .bp-label {
-      position: absolute;
-      bottom: 1.25rem; left: 1.5rem;
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      color: rgba(100,160,255,0.45);
-      letter-spacing: 0.1em;
-    }
+    /* ── SECTIONS ── */
+    section { padding: 5.5rem 3rem; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--border); }
 
-    .bp-corner { position: absolute; width: 14px; height: 14px; border-color: rgba(100,160,255,0.35); border-style: solid; }
-    .bp-corner.tl { top: 12px; left: 12px; border-width: 1px 0 0 1px; }
-    .bp-corner.tr { top: 12px; right: 12px; border-width: 1px 1px 0 0; }
-    .bp-corner.bl { bottom: 12px; left: 12px; border-width: 0 0 1px 1px; }
-    .bp-corner.br { bottom: 12px; right: 12px; border-width: 0 1px 1px 0; }
+    .section-header { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 3rem; }
+    .section-num { font-family: var(--mono); font-size: 0.7rem; color: var(--accent); opacity: 0.6; }
+    .section-title { font-family: var(--serif); font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1.1; }
 
-    /* SECTIONS */
-    section {
-      padding: 6rem 3rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      border-top: 1px solid var(--border);
-    }
-
-    .section-header { display: flex; align-items: baseline; gap: 1.25rem; margin-bottom: 3.5rem; }
-    .section-num { font-family: var(--mono); font-size: 0.72rem; color: var(--accent); opacity: 0.7; }
-    .section-title { font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.1; }
-
-    /* ABOUT */
+    /* ── ABOUT ── */
     .about-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 5rem; align-items: start; }
 
-    .about-text p { font-weight: 300; color: #4a4843; line-height: 1.9; margin-bottom: 1.25rem; font-size: 1.025rem; }
+    .about-text p { font-weight: 300; color: #46443f; line-height: 1.9; margin-bottom: 1.2rem; font-size: 1rem; }
+    .about-text strong { color: var(--ink); font-weight: 500; }
 
-    .about-stats { display: flex; flex-direction: column; gap: 1px; border: 1px solid var(--border); }
+    .about-sidebar { display: flex; flex-direction: column; gap: 1px; }
 
-    .stat-row { display: flex; justify-content: space-between; align-items: center; padding: 1.1rem 1.25rem; background: var(--card); border-bottom: 1px solid var(--border); }
-    .stat-row:last-child { border-bottom: none; }
-    .stat-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-    .stat-value { font-family: var(--mono); font-size: 0.85rem; color: var(--ink); }
+    .info-row {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      padding: 1rem 1.2rem; background: var(--card);
+      border: 1px solid var(--border); border-bottom: none;
+    }
+    .info-row:last-child { border-bottom: 1px solid var(--border); }
+    .info-label { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding-top: 2px; flex-shrink: 0; }
+    .info-value { font-size: 0.85rem; color: var(--ink); font-weight: 400; text-align: right; max-width: 60%; }
+    .info-value a { color: var(--accent); text-decoration: none; }
+    .info-value a:hover { text-decoration: underline; }
 
-    /* PROJECTS */
-    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    /* ── EXPERIENCE ── */
+    .experience-list { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .exp-card {
+      background: var(--card); border: 1px solid var(--border);
+      padding: 2rem 2.25rem; position: relative;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .exp-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.06); border-color: #ccc8bf; }
+
+    .exp-card::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 3px; background: var(--accent); opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .exp-card:hover::before { opacity: 1; }
+
+    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; gap: 1rem; }
+    .exp-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; line-height: 1.2; }
+    .exp-date { font-family: var(--mono); font-size: 0.7rem; color: var(--muted); white-space: nowrap; padding-top: 3px; }
+    .exp-org { font-size: 0.82rem; font-weight: 500; color: var(--accent); margin-bottom: 1rem; }
+
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .exp-bullets li { font-size: 0.9rem; font-weight: 300; color: #4a4843; line-height: 1.65; display: flex; gap: 0.6rem; }
+    .exp-bullets li::before { content: '—'; color: var(--accent); opacity: 0.6; flex-shrink: 0; font-size: 0.8rem; margin-top: 2px; }
+
+    .exp-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.1rem; }
+    .exp-tag { font-family: var(--mono); font-size: 0.65rem; padding: 0.2rem 0.55rem; background: var(--accent-light); color: var(--accent); border-radius: 1px; }
+
+    /* ── PROJECTS ── */
+    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
 
     .project-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 2rem;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
+      background: var(--card); border: 1px solid var(--border);
+      padding: 1.75rem; text-decoration: none; color: inherit;
+      display: flex; flex-direction: column; gap: 0.65rem;
       transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
     }
-
-    .project-card::after { content: ''; position: absolute; bottom: 0; left: 0; height: 2px; width: 0; background: var(--accent); transition: width 0.35s ease; }
-    .project-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.07); border-color: #c8c3bb; }
+    .project-card::after { content: ''; position: absolute; bottom: 0; left: 0; height: 2px; width: 0; background: var(--accent); transition: width 0.3s ease; }
+    .project-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.07); border-color: #c5c0b7; }
     .project-card:hover::after { width: 100%; }
 
-    .project-tag { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
-    .project-card h3 { font-family: var(--serif); font-size: 1.35rem; line-height: 1.2; }
-    .project-card p { font-size: 0.9rem; font-weight: 300; color: var(--muted); line-height: 1.7; flex: 1; }
+    .project-tag { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+    .project-card h3 { font-family: var(--serif); font-size: 1.25rem; line-height: 1.2; font-weight: 700; }
+    .project-card p { font-size: 0.88rem; font-weight: 300; color: var(--muted); line-height: 1.7; flex: 1; }
+    .project-pills { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.25rem; }
+    .pill { font-size: 0.65rem; font-family: var(--mono); padding: 0.18rem 0.55rem; background: var(--accent-light); color: var(--accent); border-radius: 1px; }
+    .project-arrow { font-size: 0.8rem; font-weight: 500; color: var(--ink); display: inline-flex; align-items: center; gap: 0.35rem; transition: gap 0.2s; margin-top: 0.35rem; }
+    .project-card:hover .project-arrow { gap: 0.6rem; }
 
-    .project-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.25rem; }
-    .pill { font-size: 0.7rem; font-family: var(--mono); padding: 0.2rem 0.6rem; background: var(--accent-light); color: var(--accent); border-radius: 1px; }
-
-    .project-arrow { font-size: 0.82rem; font-weight: 500; color: var(--ink); margin-top: 0.5rem; display: inline-flex; align-items: center; gap: 0.4rem; transition: gap 0.2s; }
-    .project-card:hover .project-arrow { gap: 0.7rem; }
-
-    /* SKILLS */
+    /* ── SKILLS ── */
     .skills-layout { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
 
-    .skill-group { background: var(--card); border: 1px solid var(--border); padding: 1.75rem; }
-    .skill-group-icon { font-size: 1.4rem; margin-bottom: 1rem; }
-    .skill-group h4 { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
-
-    .skill-list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
-    .skill-list li { font-size: 0.875rem; font-weight: 400; color: var(--ink); display: flex; align-items: center; gap: 0.5rem; }
+    .skill-group { background: var(--card); border: 1px solid var(--border); padding: 1.6rem; }
+    .skill-group-icon { font-size: 1.25rem; margin-bottom: 0.85rem; }
+    .skill-group h4 { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.9rem; padding-bottom: 0.7rem; border-bottom: 1px solid var(--border); }
+    .skill-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .skill-list li { font-size: 0.85rem; font-weight: 400; color: var(--ink); display: flex; align-items: center; gap: 0.5rem; }
     .skill-list li::before { content: ''; width: 3px; height: 3px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+    .skill-highlight { font-weight: 500; }
 
-    /* CONTACT */
+    /* ── RESUME CTA ── */
+    .resume-cta {
+      background: var(--ink); color: #fff;
+      padding: 3.5rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .resume-cta-text h3 { font-family: var(--serif); font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: 700; }
+    .resume-cta-text p { font-size: 0.9rem; font-weight: 300; color: rgba(255,255,255,0.65); }
+
+    .resume-cta-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+    .btn-white { background: #fff; color: var(--ink); }
+    .btn-white:hover { background: #f0f0f0; }
+    .btn-white-outline { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.35); }
+    .btn-white-outline:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); }
+
+    /* ── CONTACT ── */
     .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
 
-    .contact-text p { font-size: 1rem; font-weight: 300; color: var(--muted); line-height: 1.9; margin-bottom: 2rem; }
+    .contact-text p { font-size: 0.98rem; font-weight: 300; color: var(--muted); line-height: 1.9; margin-bottom: 2rem; }
 
-    .contact-links { display: flex; flex-direction: column; gap: 0.6rem; }
-
+    .contact-links { display: flex; flex-direction: column; gap: 0.55rem; }
     .contact-link { display: flex; align-items: center; gap: 0.875rem; font-size: 0.875rem; color: var(--ink); text-decoration: none; padding: 0.875rem 1.1rem; border: 1px solid var(--border); background: var(--card); transition: border-color 0.2s, transform 0.15s; }
-    .contact-link:hover { border-color: var(--ink); transform: translateX(3px); }
-    .contact-link-icon { font-family: var(--mono); font-size: 0.8rem; color: var(--accent); width: 1.5rem; flex-shrink: 0; }
-    .contact-link-label { flex: 1; }
-    .contact-link-sub { font-size: 0.75rem; color: var(--muted); font-family: var(--mono); }
+    .contact-link:hover { border-color: var(--accent); transform: translateX(3px); }
+    .contact-link-icon { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); width: 1.4rem; flex-shrink: 0; }
+    .contact-link-label { flex: 1; font-size: 0.85rem; }
+    .contact-link-sub { font-size: 0.7rem; color: var(--muted); font-family: var(--mono); }
 
-    .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
-    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-    .form-group label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-family: var(--mono); }
-    .form-group input, .form-group textarea { background: var(--card); border: 1px solid var(--border); padding: 0.75rem 1rem; font-family: var(--sans); font-size: 0.95rem; font-weight: 300; color: var(--ink); outline: none; transition: border-color 0.2s; resize: vertical; border-radius: 1px; }
+    .contact-form { display: flex; flex-direction: column; gap: 1.1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+    .form-group label { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-family: var(--mono); }
+    .form-group input, .form-group textarea { background: var(--card); border: 1px solid var(--border); padding: 0.7rem 0.9rem; font-family: var(--sans); font-size: 0.92rem; font-weight: 300; color: var(--ink); outline: none; transition: border-color 0.2s; resize: vertical; border-radius: 1px; }
     .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); }
-    .form-group textarea { min-height: 120px; }
+    .form-group textarea { min-height: 110px; }
 
-    /* FOOTER */
-    footer { border-top: 1px solid var(--border); padding: 2rem 3rem; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-    .footer-left { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); }
-    .footer-right { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); }
+    /* ── FOOTER ── */
+    footer { border-top: 1px solid var(--border); padding: 1.75rem 3rem; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .footer-left { font-family: var(--serif); font-size: 0.92rem; color: var(--ink); }
+    .footer-right { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); }
 
-    /* ANIMATIONS */
+    /* ── ANIMATIONS ── */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
     .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
       #hero { grid-template-columns: 1fr; }
       .hero-right { display: none; }
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -284,44 +281,58 @@
       .skills-layout { grid-template-columns: repeat(2, 1fr); }
       .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
     }
-
     @media (max-width: 600px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
       section { padding: 4rem 1.5rem; }
       #hero { padding: 7rem 1.5rem 3rem; }
       .skills-layout { grid-template-columns: 1fr; }
+      .resume-cta { padding: 2.5rem 1.5rem; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
     }
   </style>
 </head>
 <body>
 
+  <!-- NAV -->
   <nav>
     <a href="#hero" class="nav-logo">
       <span class="nav-logo-name">Robbie Burslem</span>
-      <span class="nav-logo-title">Mechanical Engineer</span>
+      <span class="nav-logo-title">Mechanical Engineering · Texas State</span>
     </a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact" class="nav-cta">Contact</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
+    <a href="robbie-burslem-resume.pdf" target="_blank" class="nav-resume-btn">
+      ↓ Resume
+    </a>
   </nav>
 
   <!-- HERO -->
   <div id="hero">
     <div class="hero-left">
-      <p class="hero-eyebrow">Mechanical Engineer</p>
+      <p class="hero-eyebrow">Seeking Summer 2026 Internship</p>
       <h1 class="hero-name">
         Robbie
         <em>Burslem.</em>
       </h1>
-      <p class="hero-bio">I design and build things — from precise CAD models and manufactured components to automated systems. My work sits at the intersection of mechanical design, manufacturing, and robotics.</p>
+      <p class="hero-bio">
+        Sophomore Mechanical Engineering student at Texas State University, graduating May 2028. Interested in mechanical design, robotics, and manufacturing.
+      </p>
+      <div class="hero-tags">
+        <span class="hero-tag">SolidWorks CSWA</span>
+        <span class="hero-tag">Formula SAE</span>
+        <span class="hero-tag">Robotics</span>
+        <span class="hero-tag">Texas State University</span>
+      </div>
       <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">See my projects</a>
-        <a href="https://github.com/robbieburslem" target="_blank" class="btn btn-ghost">GitHub ↗</a>
+        <a href="#experience" class="btn btn-primary">View experience</a>
+        <a href="robbie-burslem-resume.pdf" target="_blank" class="btn btn-outline-accent">↓ Download resume</a>
+        <a href="https://www.linkedin.com/in/robbie-burslem-2182452b5/" target="_blank" class="btn btn-ghost">LinkedIn ↗</a>
       </div>
     </div>
     <div class="hero-right">
@@ -331,13 +342,13 @@
         <div class="bp-corner bl"></div>
         <div class="bp-corner br"></div>
         <svg class="bp-svg" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="110" cy="110" r="90" stroke="rgba(100,160,255,0.15)" stroke-width="0.5" stroke-dasharray="4 4"/>
-          <circle cx="110" cy="110" r="62" stroke="rgba(100,160,255,0.55)" stroke-width="1"/>
-          <circle cx="110" cy="110" r="22" stroke="rgba(100,160,255,0.55)" stroke-width="1"/>
-          <circle cx="110" cy="110" r="9" stroke="rgba(100,160,255,0.8)" stroke-width="1.5"/>
-          <line x1="110" y1="20" x2="110" y2="200" stroke="rgba(100,160,255,0.15)" stroke-width="0.5"/>
-          <line x1="20" y1="110" x2="200" y2="110" stroke="rgba(100,160,255,0.15)" stroke-width="0.5"/>
-          <g stroke="rgba(100,160,255,0.55)" stroke-width="1" fill="none">
+          <circle cx="110" cy="110" r="90" stroke="rgba(100,160,255,0.12)" stroke-width="0.5" stroke-dasharray="4 4"/>
+          <circle cx="110" cy="110" r="62" stroke="rgba(100,160,255,0.5)" stroke-width="1"/>
+          <circle cx="110" cy="110" r="22" stroke="rgba(100,160,255,0.5)" stroke-width="1"/>
+          <circle cx="110" cy="110" r="9" stroke="rgba(100,160,255,0.75)" stroke-width="1.5"/>
+          <line x1="110" y1="20" x2="110" y2="200" stroke="rgba(100,160,255,0.13)" stroke-width="0.5"/>
+          <line x1="20" y1="110" x2="200" y2="110" stroke="rgba(100,160,255,0.13)" stroke-width="0.5"/>
+          <g stroke="rgba(100,160,255,0.5)" stroke-width="1" fill="none">
             <rect x="104" y="42" width="12" height="12" rx="1" transform="rotate(0 110 110) translate(0 -6)"/>
             <rect x="104" y="42" width="12" height="12" rx="1" transform="rotate(30 110 110) translate(0 -6)"/>
             <rect x="104" y="42" width="12" height="12" rx="1" transform="rotate(60 110 110) translate(0 -6)"/>
@@ -351,17 +362,18 @@
             <rect x="104" y="42" width="12" height="12" rx="1" transform="rotate(300 110 110) translate(0 -6)"/>
             <rect x="104" y="42" width="12" height="12" rx="1" transform="rotate(330 110 110) translate(0 -6)"/>
           </g>
-          <g stroke="rgba(100,160,255,0.3)" stroke-width="0.75">
+          <g stroke="rgba(100,160,255,0.28)" stroke-width="0.75">
             <line x1="110" y1="88" x2="110" y2="48"/>
             <line x1="110" y1="88" x2="110" y2="48" transform="rotate(120 110 110)"/>
             <line x1="110" y1="88" x2="110" y2="48" transform="rotate(240 110 110)"/>
           </g>
-          <line x1="20" y1="190" x2="200" y2="190" stroke="rgba(100,160,255,0.25)" stroke-width="0.5"/>
-          <line x1="20" y1="186" x2="20" y2="194" stroke="rgba(100,160,255,0.25)" stroke-width="0.5"/>
-          <line x1="200" y1="186" x2="200" y2="194" stroke="rgba(100,160,255,0.25)" stroke-width="0.5"/>
-          <text x="110" y="187" fill="rgba(100,160,255,0.4)" font-size="6" font-family="monospace" text-anchor="middle">∅ 124.0 mm</text>
+          <line x1="20" y1="190" x2="200" y2="190" stroke="rgba(100,160,255,0.22)" stroke-width="0.5"/>
+          <line x1="20" y1="186" x2="20" y2="194" stroke="rgba(100,160,255,0.22)" stroke-width="0.5"/>
+          <line x1="200" y1="186" x2="200" y2="194" stroke="rgba(100,160,255,0.22)" stroke-width="0.5"/>
+          <text x="110" y="187" fill="rgba(100,160,255,0.38)" font-size="6" font-family="monospace" text-anchor="middle">∅ 124.0 mm</text>
         </svg>
         <span class="bp-label">DWG-001 / GEAR ASSEMBLY / REV A</span>
+        <span class="bp-ref">TXST-ME-2026</span>
       </div>
     </div>
   </div>
@@ -374,89 +386,145 @@
     </div>
     <div class="about-grid">
       <div class="about-text reveal">
-        <p>I'm Robbie Burslem, a mechanical engineer with a focus on design, manufacturing, and robotics & automation. I enjoy the full arc of engineering — from the first SolidWorks sketch to a manufactured part or working prototype.</p>
-        <p>My work spans precision component design, design-for-manufacture, and building automated systems. I'm drawn to problems that demand both rigorous analysis and hands-on ingenuity.</p>
-        <p>This portfolio showcases projects I've built and engineered. If something catches your eye or you want to work together, feel free to get in touch.</p>
+        <p>I'm a sophomore studying Mechanical Engineering at <strong>Texas State University</strong> (graduating May 2028), with a <strong>Presidential Merit Scholarship</strong> and a focus on design, manufacturing, and robotics & automation.</p>
+        <p>My hands-on experience includes machining precision components for the <strong>Formula SAE race car program</strong> on Haas CNC mills, designing automated systems for the Robotics & Automation Club, and holding a <strong>SolidWorks CSWA certification</strong>. I bridge the gap between design and manufacture — I've done both.</p>
+        <p>I'm actively seeking a <strong>summer 2026 engineering internship</strong> where I can contribute to real mechanical design, manufacturing, or product development work alongside experienced engineers.</p>
       </div>
-      <div class="about-stats reveal">
-        <div class="stat-row">
-          <span class="stat-label">Discipline</span>
-          <span class="stat-value">Mechanical Engineering</span>
+      <div class="about-sidebar reveal">
+        <div class="info-row"><span class="info-label">University</span><span class="info-value">Texas State University</span></div>
+        <div class="info-row"><span class="info-label">Degree</span><span class="info-value">B.S. Mechanical Engineering</span></div>
+        <div class="info-row"><span class="info-label">Graduation</span><span class="info-value">May 2028</span></div>
+        <div class="info-row"><span class="info-label">Location</span><span class="info-value">San Marcos, TX</span></div>
+        <div class="info-row"><span class="info-label">Certification</span><span class="info-value">SolidWorks CSWA</span></div>
+        <div class="info-row"><span class="info-label">LinkedIn</span><span class="info-value"><a href="https://www.linkedin.com/in/robbie-burslem-2182452b5/" target="_blank">robbie-burslem ↗</a></span></div>
+        <div class="info-row"><span class="info-label">Email</span><span class="info-value"><a href="mailto:robbieburslem@gmail.com">robbieburslem@gmail.com</a></span></div>
+        <div class="info-row"><span class="info-label">Status</span><span class="info-value" style="color: #1a7a3c; font-weight: 500;">Seeking internship</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-header reveal">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Experience</h2>
+    </div>
+    <div class="experience-list">
+
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <span class="exp-title">Formula SAE Team</span>
+          <span class="exp-date">Aug 2025 – Present</span>
         </div>
-        <div class="stat-row">
-          <span class="stat-label">Focus Areas</span>
-          <span class="stat-value">Design · Mfg · Robotics</span>
-        </div>
-        <div class="stat-row">
-          <span class="stat-label">Primary CAD</span>
-          <span class="stat-value">SolidWorks</span>
-        </div>
-        <div class="stat-row">
-          <span class="stat-label">GitHub</span>
-          <span class="stat-value">@robbieburslem</span>
-        </div>
-        <div class="stat-row">
-          <span class="stat-label">Status</span>
-          <span class="stat-value">Open to opportunities</span>
+        <div class="exp-org">Manufacturing Team Member · Texas State University</div>
+        <ul class="exp-bullets">
+          <li>Member of the manufacturing team for the student-led Formula SAE race car program, contributing to the full design-to-manufacturing workflow.</li>
+          <li>CAD design in SolidWorks, CAM programming in Mastercam, and CNC machining of race car components.</li>
+          <li>Machine precision parts on Haas 2 and 3-axis CNC mills to tight tolerances for a competition vehicle.</li>
+          <li>Collaborate with engineers to translate designs into manufacturable components.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">SolidWorks</span>
+          <span class="exp-tag">Mastercam / CAM</span>
+          <span class="exp-tag">CNC Haas Mill</span>
+          <span class="exp-tag">GD&T</span>
+          <span class="exp-tag">DFM</span>
         </div>
       </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <span class="exp-title">Robotics & Automation Club</span>
+          <span class="exp-date">Aug 2025 – Present</span>
+        </div>
+        <div class="exp-org">Industry Group · Hardware Sub-Team Lead · Texas State University</div>
+        <ul class="exp-bullets">
+          <li>Selected for the Industry Group to design and implement automated systems for the school's makerspace.</li>
+          <li>Collaborating with a cross-functional team to deliver a real-world automation solution for the TXST Ingram Hall Engineering Lab.</li>
+          <li>Leading the hardware sub-team to design and build the frame and physical components of the robot.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Mechanism Design</span>
+          <span class="exp-tag">Structural Design</span>
+          <span class="exp-tag">Team Lead</span>
+          <span class="exp-tag">Prototyping</span>
+        </div>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <span class="exp-title">Property Management Assistant</span>
+          <span class="exp-date">Aug 2024 – Present</span>
+        </div>
+        <div class="exp-org">C40 Solutions · Austin, TX</div>
+        <ul class="exp-bullets">
+          <li>Managed operations across high-value properties for ultra-high net worth clients, requiring exceptional attention to detail and discretion.</li>
+          <li>Coordinated complex tasks efficiently while adhering to strict confidentiality and professional standards.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Operations</span>
+          <span class="exp-tag">Attention to Detail</span>
+          <span class="exp-tag">Confidentiality</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects">
     <div class="section-header reveal">
-      <span class="section-num">02</span>
+      <span class="section-num">03</span>
       <h2 class="section-title">Projects</h2>
     </div>
     <div class="projects-grid">
 
       <a href="https://github.com/robbieburslem/project-one" target="_blank" class="project-card reveal">
+        <span class="project-tag">Formula SAE</span>
+        <h3>Race Car Component — Title</h3>
+        <p>Describe a specific part or sub-assembly you designed or machined for the Formula SAE car. What were the constraints, tolerances, and your role?</p>
+        <div class="project-pills">
+          <span class="pill">SolidWorks</span>
+          <span class="pill">Mastercam</span>
+          <span class="pill">CNC Haas</span>
+        </div>
+        <span class="project-arrow">View on GitHub →</span>
+      </a>
+
+      <a href="https://github.com/robbieburslem/project-two" target="_blank" class="project-card reveal">
+        <span class="project-tag">Robotics & Automation</span>
+        <h3>Makerspace Automation Robot</h3>
+        <p>Describe the automated system being designed for TXST Ingram Hall. What is the robot's function, what hardware decisions have you made, and what's your sub-team's approach?</p>
+        <div class="project-pills">
+          <span class="pill">Frame Design</span>
+          <span class="pill">Mechanism Design</span>
+          <span class="pill">SolidWorks</span>
+        </div>
+        <span class="project-arrow">View on GitHub →</span>
+      </a>
+
+      <a href="https://github.com/robbieburslem/project-three" target="_blank" class="project-card reveal">
         <span class="project-tag">Design & CAD</span>
-        <h3>Project One Title</h3>
-        <p>Describe what you designed, the engineering problem you solved, and any interesting design decisions. What were the key constraints? What was the outcome?</p>
+        <h3>Personal CAD Project — Title</h3>
+        <p>Describe a personal or coursework CAD project. What did you design, what engineering principles did you apply, and what was the result?</p>
         <div class="project-pills">
           <span class="pill">SolidWorks</span>
           <span class="pill">FEA</span>
           <span class="pill">3D Printing</span>
         </div>
-        <span class="project-arrow">View project →</span>
-      </a>
-
-      <a href="https://github.com/robbieburslem/project-two" target="_blank" class="project-card reveal">
-        <span class="project-tag">Robotics & Automation</span>
-        <h3>Project Two Title</h3>
-        <p>Describe the robotic or automated system you built. What actuators, sensors, or control systems were involved? What problem did it solve?</p>
-        <div class="project-pills">
-          <span class="pill">Arduino</span>
-          <span class="pill">Servo Control</span>
-          <span class="pill">Python</span>
-        </div>
-        <span class="project-arrow">View project →</span>
-      </a>
-
-      <a href="https://github.com/robbieburslem/project-three" target="_blank" class="project-card reveal">
-        <span class="project-tag">Manufacturing</span>
-        <h3>Project Three Title</h3>
-        <p>Describe a manufacturing or fabrication project. What process did you use — machining, sheet metal, welding? What were the tolerances and constraints?</p>
-        <div class="project-pills">
-          <span class="pill">CNC Machining</span>
-          <span class="pill">GD&T</span>
-          <span class="pill">SolidWorks</span>
-        </div>
-        <span class="project-arrow">View project →</span>
+        <span class="project-arrow">View on GitHub →</span>
       </a>
 
       <a href="https://github.com/robbieburslem/project-four" target="_blank" class="project-card reveal">
-        <span class="project-tag">Design & CAD</span>
-        <h3>Project Four Title</h3>
-        <p>A capstone, competition entry, or personal build. Describe the design challenge, your engineering approach, and the final result.</p>
+        <span class="project-tag">Software / Tools</span>
+        <h3>Coding / Automation Project — Title</h3>
+        <p>Describe a software or scripting project — could be a MATLAB simulation, a Python tool, or something from your CS background at Saint John's.</p>
         <div class="project-pills">
-          <span class="pill">SolidWorks</span>
-          <span class="pill">Simulation</span>
-          <span class="pill">Prototyping</span>
+          <span class="pill">Python</span>
+          <span class="pill">MATLAB</span>
+          <span class="pill">JavaScript</span>
         </div>
-        <span class="project-arrow">View project →</span>
+        <span class="project-arrow">View on GitHub →</span>
       </a>
 
     </div>
@@ -465,7 +533,7 @@
   <!-- SKILLS -->
   <section id="skills">
     <div class="section-header reveal">
-      <span class="section-num">03</span>
+      <span class="section-num">04</span>
       <h2 class="section-title">Skills & tools</h2>
     </div>
     <div class="skills-layout">
@@ -473,8 +541,9 @@
         <div class="skill-group-icon">✏️</div>
         <h4>CAD & Design</h4>
         <ul class="skill-list">
-          <li>SolidWorks</li>
-          <li>Technical Drawing</li>
+          <li><span class="skill-highlight">SolidWorks (CSWA)</span></li>
+          <li>Fusion 360</li>
+          <li>AutoCAD</li>
           <li>GD&T</li>
           <li>Design for Manufacture</li>
           <li>FEA / Simulation</li>
@@ -484,10 +553,10 @@
         <div class="skill-group-icon">⚙️</div>
         <h4>Manufacturing</h4>
         <ul class="skill-list">
-          <li>CNC Machining</li>
+          <li><span class="skill-highlight">Haas CNC Milling</span></li>
+          <li>Mastercam / CAM</li>
           <li>3D Printing / FDM</li>
-          <li>Sheet Metal</li>
-          <li>Welding</li>
+          <li>Precision Measurement</li>
           <li>Workshop Practice</li>
         </ul>
       </div>
@@ -496,50 +565,69 @@
         <h4>Robotics & Automation</h4>
         <ul class="skill-list">
           <li>Mechanism Design</li>
+          <li>Structural / Frame Design</li>
           <li>Actuators & Sensors</li>
-          <li>Arduino / Embedded</li>
           <li>Control Systems</li>
-          <li>Python</li>
+          <li>Embedded / Arduino</li>
         </ul>
       </div>
       <div class="skill-group reveal">
-        <div class="skill-group-icon">📐</div>
-        <h4>Engineering</h4>
+        <div class="skill-group-icon">💻</div>
+        <h4>Software</h4>
         <ul class="skill-list">
-          <li>Statics & Dynamics</li>
-          <li>Materials Science</li>
-          <li>Thermodynamics</li>
           <li>MATLAB</li>
-          <li>Technical Writing</li>
+          <li>Python</li>
+          <li>JavaScript / Java</li>
+          <li>C</li>
+          <li>Unity</li>
         </ul>
       </div>
     </div>
   </section>
 
+  <!-- RESUME CTA -->
+  <section style="padding: 0 3rem 5.5rem; border-top: none;">
+    <div class="resume-cta reveal">
+      <div class="resume-cta-text">
+        <h3>Want the full picture?</h3>
+        <p>Download my resume or connect on LinkedIn — I'm actively seeking summer 2026 internship opportunities.</p>
+      </div>
+      <div class="resume-cta-actions">
+        <a href="robbie-burslem-resume.pdf" target="_blank" class="btn-primary">↓ Download resume</a>
+        <a href="https://www.linkedin.com/in/robbie-burslem-2182452b5/" target="_blank" class="btn btn-white-outline">LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
-  <section id="contact">
+  <section id="contact" style="border-top: 1px solid var(--border);">
     <div class="section-header reveal">
-      <span class="section-num">04</span>
+      <span class="section-num">05</span>
       <h2 class="section-title">Get in touch</h2>
     </div>
     <div class="contact-inner">
       <div class="contact-text reveal">
-        <p>I'm always happy to talk about interesting engineering problems, collaborations, or opportunities. Send me a message and I'll get back to you.</p>
+        <p>I'm actively looking for summer 2026 internship opportunities in mechanical design, manufacturing, or robotics. If you're hiring or want to connect, I'd love to hear from you.</p>
         <div class="contact-links">
-          <a href="mailto:robbie@example.com" class="contact-link">
+          <a href="mailto:robbieburslem@gmail.com" class="contact-link">
             <span class="contact-link-icon">✉</span>
-            <span class="contact-link-label">robbie@example.com</span>
+            <span class="contact-link-label">robbieburslem@gmail.com</span>
             <span class="contact-link-sub">Email</span>
           </a>
+          <a href="https://www.linkedin.com/in/robbie-burslem-2182452b5/" target="_blank" class="contact-link">
+            <span class="contact-link-icon">in</span>
+            <span class="contact-link-label">robbie-burslem-2182452b5</span>
+            <span class="contact-link-sub">LinkedIn</span>
+          </a>
           <a href="https://github.com/robbieburslem" target="_blank" class="contact-link">
-            <span class="contact-link-icon">⌥</span>
+            <span class="contact-link-icon">gh</span>
             <span class="contact-link-label">github.com/robbieburslem</span>
             <span class="contact-link-sub">GitHub</span>
           </a>
-          <a href="https://linkedin.com/in/robbieburslem" target="_blank" class="contact-link">
-            <span class="contact-link-icon">↗</span>
-            <span class="contact-link-label">linkedin.com/in/robbieburslem</span>
-            <span class="contact-link-sub">LinkedIn</span>
+          <a href="robbie-burslem-resume.pdf" target="_blank" class="contact-link">
+            <span class="contact-link-icon">↓</span>
+            <span class="contact-link-label">Robbie Burslem — Resume.pdf</span>
+            <span class="contact-link-sub">PDF</span>
           </a>
         </div>
       </div>
@@ -549,12 +637,16 @@
           <input type="text" id="cname" placeholder="Jane Smith" required />
         </div>
         <div class="form-group">
+          <label for="corg">Company / Organisation</label>
+          <input type="text" id="corg" placeholder="ACME Engineering" />
+        </div>
+        <div class="form-group">
           <label for="cemail">Email</label>
-          <input type="email" id="cemail" placeholder="jane@example.com" required />
+          <input type="email" id="cemail" placeholder="jane@acme.com" required />
         </div>
         <div class="form-group">
           <label for="cmessage">Message</label>
-          <textarea id="cmessage" placeholder="Tell me about your project or enquiry..." required></textarea>
+          <textarea id="cmessage" placeholder="Tell me about the internship or opportunity..." required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Send message →</button>
       </form>
@@ -563,19 +655,19 @@
 
   <footer>
     <span class="footer-left">Robbie Burslem</span>
-    <span class="footer-right">© 2026 · robbieburslem.github.io</span>
+    <span class="footer-right">© 2026 · robbieburslem.github.io · San Marcos, TX</span>
   </footer>
 
   <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((e, i) => {
         if (e.isIntersecting) {
-          e.target.style.transitionDelay = `${(i % 4) * 0.08}s`;
+          e.target.style.transitionDelay = `${(i % 3) * 0.1}s`;
           e.target.classList.add('visible');
           observer.unobserve(e.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.08 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
@@ -583,7 +675,7 @@
       e.preventDefault();
       const btn = e.target.querySelector('button[type="submit"]');
       btn.textContent = 'Sent ✓';
-      btn.style.background = '#2d6a4f';
+      btn.style.background = '#1a6e3c';
       btn.disabled = true;
       e.target.reset();
       setTimeout(() => {
